@@ -37,9 +37,9 @@
 
   <!-- Header with Slideshow -->
   <header class="w3-display-container w3-center">
-    <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium"
-      onclick="document.getElementById('download').style.display='block'">Descargar <i class="fa fa-android"></i> <i
-        class="fa fa-apple"></i> <i class="fa fa-windows"></i></button>
+    <button class="w3-button w3-block w3-purple w3-hide-large w3-hide-medium"
+      onclick="window.open('https://drive.google.com/file/d/1xiLRjm3n97aW4no8Sg6nbddkP8F2kblD/view?usp=drive_link', '_blank')">Descargar
+      <i class="fa fa-android"></i></button>
     <div class="mySlides w3-animate-opacity">
       <img class="w3-image" src="/static/img/bg.jpg" alt="Image 1" width="100%">
       <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
@@ -52,8 +52,9 @@
           {% if request|is_pc %}
           <img src="/static/img/AppQR.png" style="width: 100%">
           <p><button class="w3-button w3-block w3-purple w3-round"
-              onclick="document.getElementById('download').style.display='block'">Descargar <i class="fa fa-android"></i>
-              <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button></p>
+              onclick="window.open('https://drive.google.com/file/d/1xiLRjm3n97aW4no8Sg6nbddkP8F2kblD/view?usp=drive_link', '_blank')">Descargar
+              <i class="fa fa-android"></i>
+            </button></p>
           {% endif %}
 
         </div>
@@ -71,8 +72,10 @@
         <p style="text-align: justify;">¿Eres un verdadero apasionado de los videojuegos? ¿Buscas la mejor experiencia
           de compra para tus juegos favoritos? ¡Estás en el lugar correcto! Descarga ahora nuestra aplicación Aneurysm y
           sumérgete en el universo emocionante de los videojuegos de manera fácil y emocionante.</p>
+
+        {% if request|is_pc %}
         <button class="w3-button w3-light-grey w3-padding-large w3-section w3-hide-small"
-          onclick="document.getElementById('download').style.display='block'">
+          onclick="window.open('https://drive.google.com/file/d/1xiLRjm3n97aW4no8Sg6nbddkP8F2kblD/view?usp=drive_link', '_blank')">
           <i class="fa fa-download"></i> Descargar App
         </button>
       </div>
@@ -80,15 +83,17 @@
         <img src="/static/img/ph.jpg" class="w3-image w3-right w3-hide-small" width="335" height="471">
         <div class="w3-center w3-hide-large w3-hide-medium">
           <button class="w3-button w3-block w3-padding-large"
-            onclick="document.getElementById('download').style.display='block'">
+            onclick="window.open('https://drive.google.com/file/d/1xiLRjm3n97aW4no8Sg6nbddkP8F2kblD/view?usp=drive_link', '_blank')">
             <i class="fa fa-download"></i> Descargar App
           </button>
+          {% endif %}
+
           <!-- Móvil -->
           {% if request|is_mobile %}
-          <p>Es gratis! descargalo ahora</p>
           <p><button class="w3-button w3-block w3-purple w3-round"
-              onclick="window.location.href='https://drive.google.com/file/d/1xiLRjm3n97aW4no8Sg6nbddkP8F2kblD/view?usp=drive_link'">Descargar
-              <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button></p>
+              onclick="window.location.href='https://drive.google.com/file/d/1xiLRjm3n97aW4no8Sg6nbddkP8F2kblD/view?usp=drive_link', '_blank'">Descargar
+              <i class="fa fa-android"></i></button></p>
+          <p>Es gratis! descargalo ahora</p>
           {% endif %}
           <img src="/static/img/ph.jpg" class="w3-image w3-margin-top" width="335" height="471">
         </div>
@@ -100,7 +105,7 @@
   <div id="download" class="w3-modal w3-animate-opacity">
     <div class="w3-modal-content" style="padding:32px">
       <div class="w3-container w3-white">
-        <i onclick="document.getElementById('download').style.display='none'"
+        <i onclick="window.open('https://drive.google.com/file/d/1xiLRjm3n97aW4no8Sg6nbddkP8F2kblD/view?usp=drive_link', '_blank')"
           class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
         <h2 class="w3-wide">DOWNLOAD</h2>
         <p>Download the app in AppStore, Google Play or Microsoft Store.</p>
@@ -108,7 +113,8 @@
           class="fa fa-windows w3-large"></i>
         <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
         <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom"
-          onclick="document.getElementById('download').style.display='none'">Fake Download</button>
+          onclick="window.open('https://drive.google.com/file/d/1xiLRjm3n97aW4no8Sg6nbddkP8F2kblD/view?usp=drive_link', '_blank')">Fake
+          Download</button>
       </div>
     </div>
   </div>
@@ -123,12 +129,11 @@
       <i class="fa fa-twitter w3-hover-opacity"></i>
       <i class="fa fa-linkedin w3-hover-opacity"></i>
     </div>
-    <p class="w3-medium">Powered by <a href="https://www.google.cl" target="_blank" class="w3-hover-text-green">bla
-        bla</a></p>
+    <p class="w3-medium">Powered by <a href="https://www.google.cl" target="_blank" class="w3-hover-text-green">Doomsday
+        Inc.</a></p>
   </footer>
 
   <script>
-    // Slideshow
     var slideIndex = 1;
     showDivs(slideIndex);
 
